@@ -10,6 +10,7 @@
 <style>
     body{
         margin: 0px;
+        overflow-x: hidden;
     }
 
     .container{
@@ -32,23 +33,26 @@
 
     .c3{
         left: 100%;
+        z-index: 1;
     }
     .c1{
         background-color: red;
-        transform: translate(-250,0);
+        transform: translate(-250px,0);
+
+        transition: transform 0.4s ease-out;
+        z-index: 1;
     }
-    .c1.open{
+    .c1.open {
         transform: translate(0,0);
     }
 
     .c2{
         background-color: yellowgreen;
-        width: 50%;
     }
 
     .c3{
         background-color: gray;
-        transform: translate(0px,0);
+        transform: translate(0,0);
     }
 
     .c3.open{
@@ -59,15 +63,25 @@
 <div class="container">
     <div class="c1" role="leftsidebar" id="left">A</div>
     <div class="c2" role="main">
-        <input type="button" value="Menu" onclick="open()" id="leftMenuButton">
-
+        <input type="button" value="Open" onclick="window.open()" id="leftMenuButton">
+        <input type="button" value="Close" onclick="window.close()" id="leftMenuButton2">
     </div>
     <div class="c3" role="rightsidebar" id="right">C</div>
 </div>
 <script>
-    function open(evt) {
-        var left = document.getElementsById('left');
+    function open() {
+        var left = document.getElementById('left');
+        left.classList.add('open');
     }
+
+    function close() {
+        var left = document.getElementById('left');
+        //Drawer
+        left.classList.remove('open');
+    }
+
+
+    console.log(left);
 </script>
 </body>
 </html>
