@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0px;
+    }
+
+    .container{
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .container div{
+        box-sizing: border-box;
+        min-height: 150px;
+    }
+
+    .c1, .c3{
+        position: absolute;
+        width: 250px;
+        height: 100%;
+    }
+
+    .c3{
+        left: 100%;
+    }
+    .c1{
+        background-color: red;
+        transform: translate(-250,0);
+    }
+    .c1.open{
+        transform: translate(0,0);
+    }
+
+    .c2{
+        background-color: yellowgreen;
+        width: 50%;
+    }
+
+    .c3{
+        background-color: gray;
+        transform: translate(0px,0);
+    }
+
+    .c3.open{
+        transform: translate(-250px,0);
+    }
+</style>
+<body>
+<div class="container">
+    <div class="c1" role="leftsidebar" id="left">A</div>
+    <div class="c2" role="main">
+        <input type="button" value="Menu" onclick="open()" id="leftMenuButton">
+
+    </div>
+    <div class="c3" role="rightsidebar" id="right">C</div>
+</div>
+<script>
+    function open(evt) {
+        var left = document.getElementsById('left');
+    }
+</script>
+</body>
+</html>
